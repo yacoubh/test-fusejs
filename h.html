@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+  <title>Title of document</title>
+  <input type="search" id="site-search" name="q" aria-label="Search through site content">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.0/fuse.min.js"></script>
+</head>
+
+<body>
+<script type="text/javascript">
+var books = [{
+  'ISBN': 'A',
+  'title': "Old Man's War",
+  'author': 'John Scalzi'
+}, {
+  'ISBN': 'B',
+  'title': 'The Lock Artist',
+  'author': 'Steve Hamilton'
+}]
+
+var options = {
+  keys: ['title', 'author'],
+  id: 'ISBN'
+}
+var fuse = new Fuse(books, options)
+
+var result = fuse.search('old')
+
+document.write("the resuult -->  " + result)
+
+</script>                       
+</body>
+
+</html>
+
